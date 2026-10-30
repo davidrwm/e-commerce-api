@@ -1,20 +1,41 @@
 {
-  "name": "e-commerce-api",
+  "name": "ecommerce-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "E-commerce REST API built with Node.js, Express and PostgreSQL",
+  "main": "src/server.js",
+  "directories": {
+    "test": "tests"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node --watch --env-file=.env app.js"
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "seed": "node prisma/seed.js",
+    "test": "cross-env NODE_ENV=test dotenv_config_path=.env.test jest --runInBand",
+    "validate:openapi": "node scripts/validate-openapi.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module",
+  "type": "commonjs",
   "dependencies": {
+    "@prisma/adapter-pg": "^7.10.0",
+    "@prisma/client": "^7.10.0",
     "bcrypt": "^6.0.0",
+    "decimal.js": "^10.6.0",
+    "dotenv": "^18.0.5",
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
-    "pg": "^8.23.0"
+    "pg": "^8.23.1",
+    "swagger-ui-express": "^5.0.1",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@apidevtools/swagger-parser": "^13.0.0",
+    "cross-env": "^10.1.0",
+    "jest": "^30.5.2",
+    "nodemon": "^1.14.10",
+    "prisma": "^7.10.0",
+    "supertest": "^7.3.1",
+    "swagger-jsdoc": "^6.3.0"
   }
 }
