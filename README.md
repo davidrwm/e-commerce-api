@@ -41,7 +41,7 @@ Before running the project, install:
 
 ```bash
 git clone https://github.com/davidrwm/e-commerce-api
-cd ecommerce-api
+cd e-commerce-api
 ```
 
 ### 2. Install dependencies
